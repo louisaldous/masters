@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Need input file"
+    exit
+fi
+
+clang -S -O3 -emit-llvm -o /tmp/output.ll $1

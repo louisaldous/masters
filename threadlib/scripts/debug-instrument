@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+    echo "Need input file"
+    exit
+fi
+
+$LLVM_BIN/clang S -O3 -fuse-ld=gold -flto -emit-llvm -L. -mllvm -debug-only=instrument-function -o /tmp/output.ll $1 -lthreadlib 
+

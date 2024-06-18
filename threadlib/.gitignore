@@ -1,0 +1,7 @@
+libthreadlib.so
+
+obj/
+logs/
+compiled-tests/
+
+*.tex

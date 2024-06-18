@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$#" -ne 2 ]; then
+    echo "Need input file and output directory"
+    exit
+fi
+
+$LLVM_BIN/clang -S -Xclang -disable-O0-optnone -emit-llvm -o $2 $1
